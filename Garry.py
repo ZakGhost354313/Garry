@@ -73,6 +73,8 @@ async def on_message(message):
         "https://api.memegen.link/images/ds/small_file/high_quality.png",
         ""
     ]
+    thing = message.content.split(' ')
+    cmd = thing[0]
     if message.content == '99!':
         response = random.choice(brooklyn_99_quotes)
         await message.channel.send(response)
