@@ -83,10 +83,14 @@ async def on_message(message):
         response = "really"
         await message.channel.send(response)
     elif message.content == f'{prefix}template':
-        response = "this command is for me to use as a template"
+        #this command is for me to use as a template
+        response = ""
         await message.channel.send(response)
     elif message.content == f'{prefix}lol':
         response = getMeme()
+        await message.channel.send(response)
+    elif message.content == f'{prefix}github':
+        response = "https://github.com/ZakGhost354313/Garry"
         await message.channel.send(response)
 
 client.run(TOKEN)
