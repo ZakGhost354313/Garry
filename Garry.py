@@ -70,8 +70,10 @@ async def on_message(message):
         "https://cdn.discordapp.com/attachments/914639440062840952/1018927838985986118/trim.42D385F3-C0AF-45E7-B713-E6D9C5A2BC1A.mov.mp4",
         "https://cdn.discordapp.com/attachments/914639440062840952/1018927838985986118/trim.42D385F3-C0AF-45E7-B713-E6D9C5A2BC1A.mov.mp4",
         "https://cdn.discordapp.com/attachments/914639440062840952/1018927838985986118/trim.42D385F3-C0AF-45E7-B713-E6D9C5A2BC1A.mov.mp4",
+        "https://cdn.discordapp.com/attachments/1015448735897092246/1020483018089037874/user2045_08ec50718048.png",
+        "https://cdn.discordapp.com/attachments/832984821617786901/1019341996852256849/8b4f80b573c3b7925ef2e507461c6bc5.mp4",
         "https://api.memegen.link/images/ds/small_file/high_quality.png",
-        ""
+        "no funny meme for you\n\nonly sadness"
     ]
     thing = message.content.split(' ')
     cmd = thing[0]
@@ -86,10 +88,11 @@ async def on_message(message):
         await message.channel.send(response)
     elif message.content == f'{prefix}template':
         #this command is for me to use as a template
-        response = ""
+        response = "test \x00\x01\x02\x03"
         await message.channel.send(response)
     elif message.content == f'{prefix}lol':
-        response = getMeme()
+        #response = getMeme()
+        response = random.choice(imgur_memes)
         await message.channel.send(response)
     elif message.content == f'{prefix}github':
         response = "https://github.com/ZakGhost354313/Garry"
