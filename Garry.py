@@ -4,7 +4,6 @@ import random
 import sys
 import json
 from types import SimpleNamespace
-#installed on wsl-Ubuntu
 import discord
 from dotenv import load_dotenv
 
