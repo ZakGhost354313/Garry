@@ -4,6 +4,7 @@ import random
 import sys
 import json
 from types import SimpleNamespace
+#installed on wsl-Ubuntu
 import discord
 from dotenv import load_dotenv
 
@@ -98,11 +99,11 @@ async def on_message(message):
         response = "https://github.com/ZakGhost354313/Garry"
         await message.channel.send(response)
     elif message.content == f'{prefix}help':
-        response = '''Garry.py the bestest discord bot
-        \x60/help\x60 gives you this message in return
-        \x60/lol\x60 gives you a funny meme, unless of course you have really bad luck...
-        \x60/ping\x60 pong
-        \x60/\x60
+        response = f'''Garry.py the bestest discord bot
+        \x60{prefix}help\x60 gives you this message in return
+        \x60{prefix}lol\x60 gives you a funny meme, unless of course you have really bad luck...
+        \x60{prefix}ping\x60 pong
+        \x60{prefix}idk\x60 simply a funny joke, it messages back \"really\"
         '''
         await message.channel.send(response)
 
