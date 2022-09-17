@@ -31,7 +31,7 @@ async def on_ready():
 async def on_member_join(member):
     await member.create_dm()
     await member.dm_channel.send(f'Hi {member.name}, welcome to my Discord server!')
-prefix = "/"
+prefix = "~"
 @client.event
 async def on_message(message):
     if message.author == client.user:return
@@ -96,6 +96,14 @@ async def on_message(message):
         await message.channel.send(response)
     elif message.content == f'{prefix}github':
         response = "https://github.com/ZakGhost354313/Garry"
+        await message.channel.send(response)
+    elif message.content == f'{prefix}help':
+        response = '''Garry.py the bestest discord bot
+        \x60/help\x60 gives you this message in return
+        \x60/lol\x60 gives you a funny meme, unless of course you have really bad luck...
+        \x60/ping\x60 pong
+        \x60/\x60
+        '''
         await message.channel.send(response)
 
 client.run(TOKEN)
