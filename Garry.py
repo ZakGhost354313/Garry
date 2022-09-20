@@ -166,7 +166,7 @@ async def on_message(message):
     elif cmd == f'{prefix}a':
         # this command is for me to use as a template
         #response = "\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c"
-        test = f'''
+        test1 = f'''
             \\x00 - \x00
             \\x01 - \x01
             \\x02 - \x02
@@ -215,7 +215,9 @@ async def on_message(message):
             \\x2d - \x2d
             \\x2e - \x2e
             \\x2f - \x2f
-            \\x30 - \x30
+'''
+        test2 = f'''
+            \t\\x30 - \x30
             \\x31 - \x31
             \\x32 - \x32
             \\x33 - \x33
@@ -257,9 +259,81 @@ async def on_message(message):
             \\x57 - \x57
             \\x58 - \x58
             \\x59 - \x59
+            \\x5a - \x5a
+            \\x5b - \x5b
+            \\x5c - \x5c
+            \\x5d - \x5d
+            \\x5e - \x5e
+            \\x5f - \x5f
+            \\x60 - \x60
+            \\x61 - \x61
+            \\x62 - \x62
+            \\x63 - \x63
+            \\x64 - \x64
+            \\x65 - \x65
+            \\x66 - \x66
+            \\x67 - \x67
+            \\x68 - \x68
+            \\x69 - \x69 noice
+            \\x6a - \x6a
+            \\x6b - \x6b
+            \\x6c - \x6c
+            \\x6d - \x6d
         '''
-        response = test
-        await message.channel.send(response)
+        test3 = f'''\t\\x6e - \x6e
+            \\x6f - \x6f
+            \\x70 - \x70
+            \\x71 - \x71
+            \\x72 - \x72
+            \\x73 - \x73
+            \\x74 - \x74
+            \\x75 - \x75
+            \\x76 - \x76
+            \\x77 - \x77
+            \\x78 - \x78
+            \\x79 - \x79
+            \\x7a - \x7a
+            \\x7b - \x7b
+            \\x7c - \x7c
+            \\x7d - \x7d
+            \\x7e - \x7e
+            \\x7f - \x7f
+            \\x80 - \x80
+            \\x81 - \x81
+            \\x82 - \x82
+            \\x83 - \x83
+            \\x84 - \x84
+            \\x85 - \x85
+            \\x86 - \x86
+            \\x87 - \x87
+            \\x88 - \x88
+            \\x89 - \x89
+            \\x8a - \x8a
+            \\x8b - \x8b
+            \\x8c - \x8c
+            \\x8d - \x8d
+            \\x8e - \x8e
+            \\x8f - \x8f
+            \\x90 - \x90
+            \\x91 - \x91
+            \\x92 - \x92
+            \\x93 - \x93
+            \\x94 - \x94
+            \\x95 - \x95
+            \\x96 - \x96
+            \\x97 - \x97
+            \\x98 - \x98
+            \\x99 - \x99
+            \\x9a - \x9a
+            \\x9b - \x9b
+            \\x9c - \x9c
+            \\x9d - \x9d
+            \\x9e - \x9e
+            \\x9f - \x9f
+        '''
+        await message.channel.send(test1)
+        await message.channel.send(test2)
+        await message.channel.send(test3)
     elif cmd == f'{prefix}lol':
         #response = getMeme()
         response = random.choice(imgur_memes)
