@@ -275,5 +275,10 @@ async def on_message(message):
         print(f'saying {thing[1]}')
         response = thing[1]
         await message.channel.send(response)
+    elif cmd == f'{prefix}lol-test':
+        ah_lol = getMeme()
+        print(ah_lol)
+        response = ah_lol
+        await message.channel.send(response)
 
 client.run(TOKEN)
