@@ -216,6 +216,24 @@ async def on_message(message):
             \\x2e - \x2e
             \\x2f - \x2f
             \\x30 - \x30
+            \\x31 - \x31
+            \\x32 - \x32
+            \\x33 - \x33
+            \\x34 - \x34
+            \\x35 - \x35
+            \\x36 - \x36
+            \\x37 - \x37
+            \\x38 - \x38
+            \\x39 - \x39
+            \\x3a - \x3a
+            \\x3b - \x3b
+            \\x3c - \x3c
+            \\x3d - \x3d
+            \\x3e - \x3e
+            \\x3f - \x3f
+            \\x40 - \x40
+            \\x41 - \x41
+            \\x42 - \x42
         '''
         response = test
         await message.channel.send(response)
