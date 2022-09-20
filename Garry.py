@@ -163,9 +163,61 @@ async def on_message(message):
         print('idk')
         response = "really"
         await message.channel.send(response)
-    elif cmd == f'{prefix}template':
+    elif cmd == f'{prefix}a':
         # this command is for me to use as a template
-        response = "test \x60\t\n\t\x00\x01\x02\x03\x04"
+        #response = "\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a\x0b\x0c\x0d\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c"
+        test = f'''
+            \\x00 - \x00
+            \\x01 - \x01
+            \\x02 - \x02
+            \\x03 - \x03
+            \\x04 - \x04
+            \\x05 - \x05
+            \\x06 - \x06
+            \\x07 - \x07
+            \\x08 - \x08
+            \\x09 - \x09
+            \\x0a - \x0a
+            \\x0b - \x0b
+            \\x0c - \x0c
+            \\x0d - \x0d
+            \\x0e - \x0e
+            \\x0f - \x0f
+            \\x10 - \x10
+            \\x11 - \x11
+            \\x12 - \x12
+            \\x13 - \x13
+            \\x14 - \x14
+            \\x15 - \x15
+            \\x16 - \x16
+            \\x17 - \x17
+            \\x18 - \x18
+            \\x19 - \x19
+            \\x1a - \x1a
+            \\x1b - \x1b
+            \\x1c - \x1c
+            \\x1d - \x1d
+            \\x1e - \x1e
+            \\x1f - \x1f
+            \\x20 - \x20
+            \\x21 - \x21
+            \\x22 - \x22
+            \\x23 - \x23
+            \\x24 - \x24
+            \\x25 - \x25
+            \\x26 - \x26
+            \\x27 - \x27
+            \\x28 - \x28
+            \\x29 - \x29
+            \\x2a - \x2a
+            \\x2b - \x2b
+            \\x2c - \x2c
+            \\x2d - \x2d
+            \\x2e - \x2e
+            \\x2f - \x2f
+            \\x30 - \x30
+        '''
+        response = test
         await message.channel.send(response)
     elif cmd == f'{prefix}lol':
         #response = getMeme()
