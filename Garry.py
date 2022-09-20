@@ -87,10 +87,25 @@ async def on_member_join(member):
 prefix = "~"
 
 
+channel_id_switch = {
+    #my channel ids/names for my server "idk"
+    1015448557966340237:"bot-testing",
+    1021142868393472092:"hydra-song-requests",
+    1015452158658891786:"text-vc",
+    864537239018799138:"general",
+    1015448735897092246:"memes",
+    1015450029240107019:"bot",
+    1015452602286219274:"rules",
+    1015454195970736198:"afk"
+}
+def channel_id_switch_(id):
+    return channel_id_switch.get(id,"invalid/unknown id")
+
 @client.event
 async def on_message(message):
     print(message)
-    print(f'\nauthor:\t{message.author}\nmessage:\t{message.content}\n')
+    channel_name = channel_id_switch_(message.channel.id)
+    print(f'channel:\t{channel_name}\nauthor:\t{message.author}\nmessage:\t{message.content}\n')
     if message.author == client.user:
         return
 #    if message.content != None:
