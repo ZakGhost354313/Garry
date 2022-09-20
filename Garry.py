@@ -23,8 +23,7 @@ def getMeme():
     id = data[i].id
     example = data[i].example.text[1]
     url = 'https://api.memegen.link/images/'+id+'/high_quality/'+example
-    return id.example.url
-
+    return url
 
 brooklyn_99_quotes = [
     'I\'m the human form of the 💯 emoji.',
@@ -84,6 +83,9 @@ async def on_ready():
 async def on_member_join(member):
     await member.create_dm()
     await member.dm_channel.send(f'Hi {member.name}, welcome to my Discord server!')
+async def on_member_leave(member):
+    await member.create_dm()
+    await member.dm_channel.send(f'{member.name}!! you\'d better have left for a good reason, if this was an accident you can always dm GhostKiller7724#3863')
 prefix = "~"
 
 
@@ -96,7 +98,11 @@ channel_id_switch = {
     1015448735897092246:"memes",
     1015450029240107019:"bot",
     1015452602286219274:"rules",
-    1015454195970736198:"afk"
+    1015454195970736198:"afk",
+    1015455622478692422:"spam",
+    1016027754459828244:"roles",
+    1020494043471413279:"counting",
+    1021567482525401149:"hydra-text-vc"
 }
 def channel_id_switch_(id):
     return channel_id_switch.get(id,"invalid/unknown id")
@@ -123,6 +129,9 @@ async def on_message(message):
         if message.author.discriminator == '3863':
             print('exiting...')
             exit(0)
+        elif message.author.discriminator == '7815':
+            print('exiting...')
+            exit(0)
         else:
             print('someone tried to exit')
             response = "lol jk"
@@ -132,6 +141,9 @@ async def on_message(message):
         response = 'exiting...'
         await message.channel.send(response)
         if message.author.discriminator == '3863':
+            print('exiting...')
+            exit(0)
+        elif message.author.discriminator == '7815':
             print('exiting...')
             exit(0)
         else:
