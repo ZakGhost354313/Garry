@@ -89,6 +89,8 @@ prefix = "~"
 
 @client.event
 async def on_message(message):
+    print(message)
+    print(f'\nauthor:\t{message.author}\nmessage:\t{message.content}\n')
     if message.author == client.user:
         return
 #    if message.content != None:
@@ -96,6 +98,7 @@ async def on_message(message):
 #        await message.channel.send(response)
 #
 #        print(message)
+#        print(response)
     thing = message.content.split(' ')
     cmd = thing[0]
     if cmd == f'{prefix}end':
@@ -103,8 +106,10 @@ async def on_message(message):
         response = 'exiting...'
         await message.channel.send(response)
         if message.author.discriminator == '3863':
+            print('exiting...')
             exit(0)
         else:
+            print('someone tried to exit')
             response = "lol jk"
             await message.channel.send(response)
     elif cmd == f'{prefix}exit':
@@ -112,23 +117,28 @@ async def on_message(message):
         response = 'exiting...'
         await message.channel.send(response)
         if message.author.discriminator == '3863':
+            print('exiting...')
             exit(0)
         else:
+            print('someone tried to exit')
             response = "lol jk"
             await message.channel.send(response)
     elif cmd == '99!':
         response = random.choice(brooklyn_99_quotes)
+        print(response)
         await message.channel.send(response)
     elif cmd == f'{prefix}ping':
+        print('ping received')
         response = "pong"
         await message.channel.send(response)
+        print('pong sent')
     elif cmd == f'{prefix}idk':
-
+        print('idk')
         response = "really"
         await message.channel.send(response)
     elif cmd == f'{prefix}template':
         # this command is for me to use as a template
-        response = "test \x00\x01\x02\x03"
+        response = "test \x60\t\n\t\x00\x01\x02\x03\x04"
         await message.channel.send(response)
     elif cmd == f'{prefix}lol':
         #response = getMeme()
@@ -137,6 +147,7 @@ async def on_message(message):
         print("\n\n"+response)
         await message.channel.send(response)
     elif cmd == f'{prefix}github':
+        print('gave discord')
         response = "https://github.com/ZakGhost354313/Garry"
         await message.channel.send(response)
     elif cmd == f'{prefix}help':
@@ -146,13 +157,24 @@ async def on_message(message):
         \x60{prefix}ping\x60 pong
         \x60{prefix}idk\x60 simply a funny joke, it messages back \"really\"
         '''
+        print(response)
         await message.channel.send(response)
     elif cmd == f'{prefix}t':
         if thing[1] == "est":
+            print('testing testing')
             response = "testing testing 123"
+            await message.channel.send(response)
+        else:
+            print('welp i geuss test failed')
+            response = "welp... i geuss you did something wrong"
             await message.channel.send(response)
     elif cmd == f'{prefix}w':
         response = f'@{thing[1]} {thing[2]}'
+        print(response)
+        await message.channel.send(response)
+    elif cmd == f'{prefix}say1':
+        print(f'saying {thing[1]}')
+        response = thing[1]
         await message.channel.send(response)
 
 client.run(TOKEN)
