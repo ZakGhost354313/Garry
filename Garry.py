@@ -332,7 +332,7 @@ async def on_message(message):
             \\x9f - \x9f
         '''
         test4 = f'''\\xa0 - \xa0
-            \\xa1 - \\xa1
+            \\xa1 - \xa1
         '''
         await message.channel.send(test1)
         await message.channel.send(test2)
