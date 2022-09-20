@@ -126,10 +126,10 @@ async def on_message(message):
         print('\n\n\texiting on bot command\n\n\n')
         response = 'exiting...'
         await message.channel.send(response)
-        if message.author.discriminator == '3863':
+        if message.author.discriminator == '3863':#my specific user number
             print('exiting...')
             exit(0)
-        elif message.author.discriminator == '7815':
+        elif message.author.discriminator == '7815':#my friend's specific user number
             print('exiting...')
             exit(0)
         else:
@@ -140,10 +140,10 @@ async def on_message(message):
         print('\n\n\texiting on bot command\n\n\n')
         response = 'exiting...'
         await message.channel.send(response)
-        if message.author.discriminator == '3863':
+        if message.author.discriminator == '3863':#my specific user number
             print('exiting...')
             exit(0)
-        elif message.author.discriminator == '7815':
+        elif message.author.discriminator == '7815':#my friend's specific user number
             print('exiting...')
             exit(0)
         else:
