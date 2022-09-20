@@ -234,6 +234,8 @@ async def on_message(message):
             \\x40 - \x40
             \\x41 - \x41
             \\x42 - \x42
+            \\x43 - \x43
+            \\x44 - \x44
         '''
         response = test
         await message.channel.send(response)
