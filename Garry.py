@@ -214,4 +214,7 @@ async def on_message(message):
         elif channel_name != "spam":
             response = "you are not in \x23spam"
             await message.channel.send(response)
+    #elif cmd == f'{prefix}example':
+        #response = "this is an example script"
+        #await message.channel.send(response)
 client.run(TOKEN)
