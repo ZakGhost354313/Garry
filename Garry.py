@@ -368,10 +368,39 @@ async def on_message(message):
             \\xc2 - \xc2
             \\xc3 - \xc3
         '''
+        test5 = f'''\\xc4 - \xc4
+            \\xc5 - \xc5
+            \\xc6 - \xc6
+            \\xc7 - \xc7
+            \\xc8 - \xc8
+            \\xc9 - \xc9
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+            \\x
+        '''
         await message.channel.send(test1)
         await message.channel.send(test2)
         await message.channel.send(test3)
         await message.channel.send(test4)
+        await message.channel.send(test5)
     elif cmd == f'{prefix}lol':
         #response = getMeme()
         response = random.choice(imgur_memes)
