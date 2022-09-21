@@ -333,6 +333,40 @@ async def on_message(message):
         '''
         test4 = f'''\\xa0 - \xa0
             \\xa1 - \xa1
+            \\xa2 - \xa2
+            \\xa3 - \xa3
+            \\xa4 - \xa4
+            \\xa5 - \xa5
+            \\xa6 - \xa6
+            \\xa7 - \xa7
+            \\xa8 - \xa8
+            \\xa9 - \xa9
+            \\xaa - \xaa
+            \\xab - \xab
+            \\xac - \xac
+            \\xad - \xad
+            \\xae - \xae
+            \\xaf - \xaf
+            \\xb0 - \xb0
+            \\xb1 - \xb1
+            \\xb2 - \xb2
+            \\xb3 - \xb3
+            \\xb4 - \xb4
+            \\xb5 - \xb5
+            \\xb6 - \xb6
+            \\xb7 - \xb7
+            \\xb8 - \xb8
+            \\xb9 - \xb9
+            \\xba - \xba
+            \\xbb - \xbb
+            \\xbc - \xbc
+            \\xbd - \xbd
+            \\xbe - \xbe
+            \\xbf - \xbf
+            \\xc0 - \xc0
+            \\xc1 - \xc1
+            \\xc2 - \xc2
+            \\xc3 - \xc3
         '''
         await message.channel.send(test1)
         await message.channel.send(test2)
