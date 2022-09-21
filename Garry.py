@@ -13,10 +13,10 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-file = open("./memegen.json")
-data_set = file.read()
-data = json.loads(data_set, object_hook=lambda d: SimpleNamespace(**d))
-file.close()
+def memegen():
+    with open("./memegen.json") as file:
+        data = json.loads(file.read(), object_hook=lambda d: SimpleNamespace(**d))
+    return data
 
 def beemoviescript():
     with open("./beemovie.txt") as file:
@@ -26,8 +26,9 @@ def beemoviescript():
 
 def getMeme():
     i = random.randint(0, 191)
-    id = data[i].id
-    example = data[i].example.text[1]
+    memeset = memegen()
+    id = memeset[i].id
+    example = memeset[i].example.text[1]
     url = 'https://api.memegen.link/images/'+id+'/high_quality/'+example
     return url
 
