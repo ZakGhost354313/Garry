@@ -1,9 +1,9 @@
-\x60~help\x60 - sends this message
-\x60~lol\x60 - sends a funny meme from a premade list, unless you have bad luck then you dont get meme
-\x6099!\x60 - send a quote from brooklyn 99, idk i got this cmd from a tutoriol
-\x60~ping\x60 - sends pong
-\x60~idk\x60 - really
-\x60~a\x60 - a test command, it sends a bunch of hexidecimal stuff
-\x60~github\x60 - sends the link to the github of this bot
-\x60~beemovie\x60 - sends the entire bee movie script line by line(only in the #spam channel)
-\x60~lol-test\x60 - an experimental command that sends a random meme from a meme generator
+`~help` - sends this message
+`~lol` - sends a funny meme from a premade list, unless you have bad luck then you dont get meme
+`99!` - send a quote from brooklyn 99, idk i got this cmd from a tutoriol
+`~ping` - sends pong
+`~idk` - really
+`~a` - a test command, it sends a bunch of hexidecimal stuff
+`~github` - sends the link to the github of this bot
+`~beemovie` - sends the entire bee movie script line by line(only in the #spam channel)
+`~lol-test` - an experimental command that sends a random meme from a meme generator
