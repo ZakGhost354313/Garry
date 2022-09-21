@@ -430,9 +430,20 @@ async def on_message(message):
         await message.channel.send(response)
     elif cmd == f'{prefix}t':
         if thing[1] == "est":
-            print('testing testing')
-            response = "testing testing 123"
-            await message.channel.send(response)
+            try:
+                if thing[2] == "icle":
+                    if message.author.discriminator == '7815':
+                        print('carl said testicle')
+                        response = "really Carl"
+                        await message.channel.send(response)
+                    else: 
+                        print('funny 6969 420')
+                        response = "really, "
+                        await message.channel.send(response)
+            except:
+                print('testing testing')
+                response = "testing testing 123"
+                await message.channel.send(response)
         else:
             print('welp i geuss test failed')
             response = "welp... i geuss you did something wrong"
