@@ -374,12 +374,12 @@ async def on_message(message):
             \\xc7 - \xc7
             \\xc8 - \xc8
             \\xc9 - \xc9
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
+            \\xca - \xca
+            \\xcb - \xcb
+            \\xcc - \xcc
+            \\xcd - \xcd
+            \\xce - \xce
+            \\xcf - \xcf
             \\x
             \\x
             \\x
