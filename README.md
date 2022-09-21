@@ -15,3 +15,7 @@ Garry is a discord bot, that has a few commands(WIP)
 - `99!` - is a brooklyne 99 joke thing i got it from a tutorial
 - `/idk` - a joke from a friend
 - `/github` - sends the link to the github
+
+## Notes
+- the memes.txt file for the `/lol` command is simply a text file with a link to an image or video file of a meme
+- 
