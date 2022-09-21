@@ -50,7 +50,11 @@ def getHexTXT():
     with open("./hex.txt") as file:
         data = file.read().splitlines()
     return data
-hexTXT = getHexTXT()
+
+def getHelpTXT():
+    with open("./help.txt") as file:
+        data = file.read()
+    return data
 
 client = discord.Client(intents=discord.Intents(
     messages=True, members=True, message_content=True))
@@ -162,12 +166,8 @@ async def on_message(message):
         response = "https://github.com/ZakGhost354313/Garry"
         await message.channel.send(response)
     elif cmd == f'{prefix}help':
-        response = f'''Garry.py the bestest discord bot
-        \x60{prefix}help\x60 gives you this message in return
-        \x60{prefix}lol\x60 gives you a funny meme, unless of course you have really bad luck...
-        \x60{prefix}ping\x60 pong
-        \x60{prefix}idk\x60 simply a funny joke, it messages back \"really\"
-        '''
+        helpTXT = getHelpTXT()
+        response = helpTXT
         print(response)
         await message.channel.send(response)
     elif cmd == f'{prefix}t':
