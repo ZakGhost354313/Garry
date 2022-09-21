@@ -380,21 +380,22 @@ async def on_message(message):
             \\xcd - \xcd
             \\xce - \xce
             \\xcf - \xcf
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
-            \\x
+            \\xd0 - \xd0
+            \\xd1 - \xd1
+            \\xd2 - \xd2
+            \\xd3 - \xd3
+            \\xd4 - \xd4
+            \\xd5 - \xd5
+            \\xd6 - \xd6
+            \\xd7 - \xd7
+            \\xd8 - \xd8
+            \\xd9 - \xd9
+            \\xda - \xda
+            \\xdb - \xdb
+            \\xdc - \xdc
+            \\xdd - \xdd
+            \\xde - \xde
+            \\xdf - \xdf
         '''
         await message.channel.send(test1)
         await message.channel.send(test2)
