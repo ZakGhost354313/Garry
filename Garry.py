@@ -451,10 +451,11 @@ async def on_message(message):
         response = ah_lol
         await message.channel.send(response)
     elif cmd == f'{prefix}beemovie':
-        script = beemoviescript()
-        for s in script:
-            sleep(1)
-            response = s
-            await message.channel.send(response)
-
+        channel_name = channel_id_switch_(message.channel.id)
+        if channel_name == "spam":
+            script = beemoviescript()
+            for s in script:
+                sleep(1)
+                response = s
+                await message.channel.send(response)
 client.run(TOKEN)
