@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from http.client import ResponseNotReady
 import os
+from time import sleep
 import random
 import sys
 import json
@@ -17,6 +18,11 @@ data_set = file.read()
 data = json.loads(data_set, object_hook=lambda d: SimpleNamespace(**d))
 file.close()
 
+def beemoviescript():
+    with open("./beemovie.txt") as file:
+        data = file.read()
+    scriptlines = data.splitlines()
+    return scriptlines
 
 def getMeme():
     i = random.randint(0, 191)
@@ -33,6 +39,7 @@ brooklyn_99_quotes = [
         'no doubt no doubt no doubt no doubt.'
     ),
 ]
+
 imgur_memes = [
     "https://i.imgur.com/T3R9crd.jpeg",
     "https://i.imgur.com/OHbKpeh.jpeg",
@@ -443,5 +450,11 @@ async def on_message(message):
         print(ah_lol)
         response = ah_lol
         await message.channel.send(response)
+    elif cmd == f'{prefix}beemovie':
+        script = beemoviescript()
+        for s in script:
+            sleep(1)
+            response = s
+            await message.channel.send(response)
 
 client.run(TOKEN)
