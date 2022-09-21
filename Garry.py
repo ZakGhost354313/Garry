@@ -458,4 +458,7 @@ async def on_message(message):
                 sleep(1)
                 response = s
                 await message.channel.send(response)
+        elif channel_name != "spam":
+            response = "you are not in \x23spam"
+            await message.channel.send(response)
 client.run(TOKEN)
