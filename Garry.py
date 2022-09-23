@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+prefix = "~"
 from http.client import ResponseNotReady
 import os
 from time import sleep
@@ -56,26 +57,6 @@ def getHelpTXT():
     with open("./help.txt") as file:
         data = file.read()
     return data
-
-client = discord.Client(intents=discord.Intents(
-    messages=True, members=True, message_content=True))
-
-
-@client.event
-async def on_ready():
-    print(f'{client.user} has connected to Discord!')
-
-
-@client.event
-async def on_member_join(member):
-    await member.create_dm()
-    await member.dm_channel.send(f'Hi {member.name}, welcome to my Discord server!')
-async def on_member_leave(member):
-    await member.create_dm()
-    await member.dm_channel.send(f'{member.name}!! you\'d better have left for a good reason, if this was an accident you can always dm GhostKiller7724#3863')
-prefix = "~"
-
-
 channel_id_switch = {
     #my channel ids/names for my server "idk"
     1015448557966340237:"bot-testing",
@@ -94,6 +75,22 @@ channel_id_switch = {
 def channel_id_switch_(id):
     return channel_id_switch.get(id,"invalid/unknown id")
 
+client = discord.Client(intents=discord.Intents(
+    messages=True, members=True, message_content=True))
+
+
+@client.event
+async def on_ready():
+    print(f'{client.user} has connected to Discord!')
+
+
+@client.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(f'Hi {member.name}, welcome to my Discord server!')
+async def on_member_leave(member):
+    await member.create_dm()
+    await member.dm_channel.send(f'{member.name}!! you\'d better have left for a good reason, if this was an accident you can always dm GhostKiller7724#3863')
 @client.event
 async def on_message(message):
     print(message)
