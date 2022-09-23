@@ -10,25 +10,12 @@ from time import sleep
 import os
 from http.client import ResponseNotReady
 prefix = "~"
-
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
-
-
 def memegen():
-    with open("./memegen.json") as file:
-        data = json.loads(
-            file.read(), object_hook=lambda d: SimpleNamespace(**d))
-    return data
+    with open("./memegen.json") as file:return json.loads(file.read(), object_hook=lambda d: SimpleNamespace(**d))
 
 
 def beemoviescript():
-    with open("./beemovie.txt") as file:
-        data = file.read()
-    scriptlines = data.splitlines()
-    return scriptlines
-
-
+    with open("./beemovie.txt") as file: return file.read().splitlines()
 def getMeme():
     i = random.randint(0, 191)
     memeset = memegen()
@@ -36,86 +23,30 @@ def getMeme():
     example = memeset[i].example.text[1]
     url = 'https://api.memegen.link/images/'+id+'/high_quality/'+example
     return url
-
-
-brooklyn_99_quotes = [
-    'I\'m the human form of the 💯 emoji.',
-    'Bingpot!',
-    (
-        'Cool. Cool cool cool cool cool cool cool, '
-        'no doubt no doubt no doubt no doubt.'
-    ),
-]
-
-
+brooklyn_99_quotes = ['I\'m the human form of the 💯 emoji.','Bingpot!',('Cool. Cool cool cool cool cool cool cool, ''no doubt no doubt no doubt no doubt.'),]
 def getMemesTXT():
-    with open("./memes.txt") as file:
-        data = file.read().splitlines()
-    return data
-
-
+    with open("./memes.txt") as file: return file.read().splitlines()
 imgur_memes = getMemesTXT()
-
-
 def getHexTXT():
-    with open("./hex.txt") as file:
-        data = file.read().splitlines()
-    return data
-
-
-def getHelpTXT():
-    with open("./help.txt") as file:
-        data = file.read()
-    return data
-
-
-channel_id_switch = {
-    # my channel ids/names for my server "idk"
-    1015448557966340237: "bot-testing",
-    1021142868393472092: "hydra-song-requests",
-    1015452158658891786: "text-vc",
-    864537239018799138: "general",
-    1015448735897092246: "memes",
-    1015450029240107019: "bot",
-    1015452602286219274: "rules",
-    1015454195970736198: "afk",
-    1015455622478692422: "spam",
-    1016027754459828244: "roles",
-    1020494043471413279: "counting",
-    1021567482525401149: "hydra-text-vc"
-}
-
-
-def channel_id_switch_(id):
-    return channel_id_switch.get(id, "invalid/unknown id")
-
-
-client = discord.Client(intents=discord.Intents(
-    messages=True, members=True, message_content=True))
-
-
+    with open("./hex.txt") as file: return file.read().splitlines()
+def getHelpTXT(): 
+    with open("./help.txt") as file: return file.read()
+channel_id_switch = {1015448557966340237: "bot-testing",1021142868393472092: "hydra-song-requests",1015452158658891786: "text-vc",864537239018799138: "general",1015448735897092246: "memes",1015450029240107019: "bot",1015452602286219274: "rules",1015454195970736198: "afk",1015455622478692422: "spam",1016027754459828244: "roles",1020494043471413279: "counting",1021567482525401149: "hydra-text-vc"}
+def channel_id_switch_(id):return channel_id_switch.get(id, "invalid/unknown id")
+client = discord.Client(intents=discord.Intents(messages=True, members=True, message_content=True))
 @client.event
-async def on_ready():
-    print(f'{client.user} has connected to Discord!')
-
-
+async def on_ready():print(f'{client.user} has connected to Discord!\n\n\n{client}')
 @client.event
 async def on_member_join(member):
     await member.create_dm()
     await member.dm_channel.send(f'Hi {member.name}, welcome to my Discord server!')
-
-
 async def on_member_leave(member):
     await member.create_dm()
     await member.dm_channel.send(f'{member.name}!! you\'d better have left for a good reason, if this was an accident you can always dm GhostKiller7724#3863')
-
-
 @client.event
 async def on_message(message):
     print(message)
-    channel_name = channel_id_switch_(message.channel.id)
-    print(
-        f'channel:\t{channel_name}\nauthor:\t{message.author}\nmessage:\t{message.content}\n')
+    print(f'channel:\t{channel_id_switch_(message.channel.id)}\nauthor:\t{message.author}\nmessage:\t{message.content}\n')
     if message.author == client.user:
         return
 #    if message.content != None:
@@ -235,4 +166,5 @@ async def on_message(message):
     # elif cmd == f'{prefix}example':
         #response = "this is an example script"
         # await message.channel.send(response)
-client.run(TOKEN)
+load_dotenv()
+client.run(os.getenv('DISCORD_TOKEN'))
